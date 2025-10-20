@@ -73,7 +73,7 @@
                                         <option value="">None</option>
                                         @if (Req.ApplicationRequirementDetail != null)
                                         {
-                                            <option value="@Req.ApplicationRequirementDetail.ApplicationRequirementId">@Req.ApplicationRequirementDetail.RequirementName</option>
+                                        @*     <option value="@Req.ApplicationRequirementDetail.ApplicationRequirementId">@Req.ApplicationRequirementDetail.RequirementName</option> *@
                                         }
                                     </select>
 
@@ -107,7 +107,7 @@
                                 {
                                     <label class="checkbox-inline">
                                         <input class="@ClassV" type="checkbox" name="[@i].Application_Req_Details_Id" id="Req.Application_Requirement_Id" value="@Req.ApplicationRequirementDetail.ApplicationRequirementId">
-                                        @Req.ApplicationRequirementDetail.RequirementName
+                          @*               @Req.ApplicationRequirementDetail.RequirementName *@
                                     </label>
                                 }
                             }
@@ -136,12 +136,12 @@
                                 <div id="@Req.Application_Requirement_Id"></div>
                                 <script>
 
-                                    var Functionname = '@Req.DisplayLink.DisplayFunction';
+                                  @*   var Functionname = '@Req.DisplayLink.DisplayFunction';
                                     var Emp = '@Req.Employe.UserId';
                                     var DivId = '@Req.Application_Requirement_Id';
 
                                     // Call function:
-                                    window[Functionname](Emp, DivId);
+                                    window[Functionname](Emp, DivId); *@
                                 </script>
                             }
                             @if (Req.ToolsId == 12)

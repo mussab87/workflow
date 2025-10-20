@@ -11,9 +11,9 @@ public partial class RoleUser
 
     public int UserId { get; set; }
 
-    public DateTime CrDate { get; set; }
+    public DateTime? CrDate { get; set; }
 
-    public int CrUserId { get; set; }
+    public int? CrUserId { get; set; }
 
     public virtual Role Role { get; set; } = null!;
 

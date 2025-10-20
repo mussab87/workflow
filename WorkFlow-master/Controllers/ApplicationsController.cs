@@ -19,6 +19,8 @@ using WorkFlow.Data;
 using WorkFlow.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static NRules.RuleModel.Builders.RuleTransformation;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace WorkFlow.Controllers
 {     //[ServiceFilter(typeof(DecryptRequestFilter))]
@@ -160,7 +162,7 @@ namespace WorkFlow.Controllers
         [HttpGet]
         public IActionResult _LoadForm(int ApplicationLevelId)
         {
-            var model = _context.ApplicationRequirements.Where(x => x.ApplicationLevelId == ApplicationLevelId).Select(x => new LoadFormClass
+            var model = _context.ApplicationRequirements.Where(x => x.ApplicationLevelId == ApplicationLevelId).Select(x => new 
             {
                 Application_Requirement_Id = x.ApplicationRequirementId,
                 ApplicationLevelId = x.ApplicationLevelId,
@@ -177,7 +179,8 @@ namespace WorkFlow.Controllers
                 InStart = x.InStart,
                 SharedTableId = x.SharedTableId,
                 SharedTable = x.SharedTable,
-                ApplicationProcuderDetails = x.ApplicationProcuderDetails,
+               ApplicationProcuderDetails = x.ApplicationProcuderDetails,
+               //  x.ApplicationProcuderDetails,
                 ApplicationRequirementDetail = x.ApplicationRequirementDetails,
                 ArchivesMasterId = x.ArchivesMasterId,
                 ArchivesMasters = x.ArchivesMaster,
@@ -267,12 +270,13 @@ namespace WorkFlow.Controllers
         // GET: Applications/Create
         public IActionResult Create(Application Application)
         {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             Application Model = new Application();
             Model.ApplicationNameAr = Application.ApplicationNameAr;
             Model.ApplicationNameEng = Application.ApplicationNameEng;
             Model.ApplicationInUse = true;
             Model.CrDate = DateTime.Now;
-            Model.CrEmpId = 12;
+            Model.CrEmpId = userId;
             Model.DepartmentId = Application.DepartmentId;
             Model.SectionId = (Application.SectionId == null ? Application.SectionId : null);
             Model.SystemInfoId = Application.SystemInfoId;
@@ -319,7 +323,7 @@ namespace WorkFlow.Controllers
         }
 
           [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddLevelRequirement([FromBody] FlowData flowchartData)
         {
             var ApplicationId = flowchartData.nodes[0].ApplicationId;

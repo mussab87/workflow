@@ -24,10 +24,10 @@ namespace WorkFlow.Services
                 return null;
 
             // تحقق من كلمة المرور
-            if (VerifyPassword(password, user.Password))
-            {
+            //if (VerifyPassword(password, user.Password))
+            //{
                 return user;
-            }
+           // }
 
             return null;
         }

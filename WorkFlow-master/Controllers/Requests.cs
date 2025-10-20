@@ -123,7 +123,7 @@ namespace WorkFlow.Controllers
             model.RequestDate = System.DateTime.Now;
             model.RequestStatusId = 2;
             model.AssignedFromEmpId = AssignedFromEmpId;
-            model.CrUserId = currentUserId; // استخدام معرف المستخدم الحالي
+            //model.CrUserId = currentUserId; // استخدام معرف المستخدم الحالي
             db.Requests.Add(model);
             db.SaveChanges();
 

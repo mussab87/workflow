@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Data\DecryptRequestFilter.cs" />
-    <Compile Remove="Data\EncryptionHelper.cs" />
-    <Compile Remove="Data\EncryptionService.cs" />
-    <Compile Remove="Data\EncryptResponseFilter.cs" />
     <Compile Remove="Program11.cs" />
   </ItemGroup>
 
@@ -43,40 +39,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Migrations\" />
+    <Folder Include="Models\" />
     <Folder Include="Script\" />
     <Folder Include="wwwroot\js\Select2\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="efpt.config.json.user" />
-    <None Include="Views\Account\Index.cshtml" />
-    <None Include="Views\Applications\Create.cshtml" />
-    <None Include="Views\Applications\Details.cshtml" />
-    <None Include="Views\Applications\Edit.cshtml" />
-    <None Include="Views\Applications\Index.cshtml" />
-    <None Include="Views\Applications\_JSApplication.cshtml" />
-    <None Include="Views\Applications\_LetterEdit.cshtml" />
-    <None Include="Views\Applications\_LoadForm.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Privacy.cshtml" />
-    <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\_AppLevel.cshtml" />
-    <None Include="Views\Shared\_ApplicationRequerment.cshtml" />
-    <None Include="Views\Shared\_Archive.cshtml" />
-    <None Include="Views\Shared\_DashBoard.cshtml" />
-    <None Include="Views\Shared\_EmpJs.cshtml" />
-    <None Include="Views\Shared\_FlowChart.cshtml" />
-    <None Include="Views\Shared\_footer.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_LoginPartial.cshtml" />
-    <None Include="Views\Shared\_MainJs.cshtml" />
-    <None Include="Views\Shared\_Request.cshtml" />
-    <None Include="Views\Shared\_UserInfo.cshtml" />
-    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
-    <None Include="Views\Shared\__ApplicationRequermentDetails.cshtml" />
-    <None Include="Views\_ViewImports.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
     <None Include="wwwroot\js\FlowChart.js" />
     <None Include="wwwroot\multipleselect\multi-select.js" />
     <None Include="wwwroot\multipleselect\multiple-select.js" />
