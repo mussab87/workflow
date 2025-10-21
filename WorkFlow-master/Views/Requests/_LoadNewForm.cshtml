@@ -45,23 +45,23 @@
                             {
                                 if (Req.ColumnNameValue != "Notes")
                                 {
-                                        <input type="text"  class="@ClassV" name="[@i].S_Value" style="width:100%" required="@Req.IsRequired" />
+                                    <input type="text" class="@ClassV" name="collection[@i].S_Value" style="width:100%" required="@Req.IsRequired" />
                                 }
                                 else
                                 {
 
-                                    <textarea name="[@i].S_Value" class="@ClassV" rows="3" cols="10" required></textarea>
+                                    <textarea name="collection[@i].S_Value" class="@ClassV" rows="3" cols="10" required></textarea>
                                 }
                             }
 
                             @if (Req.ToolsId == 2)
                             {
-                                <input type="number" class="@ClassV" name="[@i].S_Value" Required required="@Req.IsRequired" />
+                                <input type="number" class="@ClassV" name="collection[@i].S_Value" Required required="@Req.IsRequired" />
 
                             }
                             @if (Req.ToolsId == 3)
                             {
-                                <input type="date" class="@ClassV" name="[@i].S_Date" Required required="@Req.IsRequired" />
+                                <input type="date" class="@ClassV" name="collection[@i].S_Date" Required required="@Req.IsRequired" />
 
 
                             }
@@ -69,7 +69,7 @@
                             {
                                 if (Req.Tools != null)
                                 {
-                                    <select name="[@i].NewDrop" id="[@i].NewDrop" class="@ClassV Ssearch" required="@Req.IsRequired">
+                                    <select name="collection[@i].NewDrop" id="collection[@i].NewDrop" class="@ClassV Ssearch" required="@Req.IsRequired">
                                         <option value="">None</option>
                                         @if (Req.ApplicationRequirementDetail != null)
                                         {
@@ -94,7 +94,7 @@
                                     <script type="text/javascript">
                                         LoadSharedTable(@Req.Application_Requirement_Id);
                                     </script>
-                                    <select id="@Req.Application_Requirement_Id" name="[@i].S_Shared_Table_Id_Value" class="@ClassV Ssearch" required="@Req.IsRequired"></select>
+                                    <select id="@Req.Application_Requirement_Id" name="collection[@i].S_Shared_Table_Id_Value" class="@ClassV Ssearch" required="@Req.IsRequired"></select>
 
 
 
@@ -106,7 +106,7 @@
                                 if (Req.ApplicationRequirementDetail != null)
                                 {
                                     <label class="checkbox-inline">
-                                        <input class="@ClassV" type="checkbox" name="[@i].Application_Req_Details_Id" id="Req.Application_Requirement_Id" value="@Req.ApplicationRequirementDetail.ApplicationRequirementId">
+                                        <input class="@ClassV" type="checkbox" name="collection[@i].Application_Req_Details_Id" id="Req.Application_Requirement_Id" value="@Req.ApplicationRequirementDetail.ApplicationRequirementId">
                           @*               @Req.ApplicationRequirementDetail.RequirementName *@
                                     </label>
                                 }
@@ -115,7 +115,7 @@
 
                             @if (Req.ToolsId == 7)
                             {///CheckBox From Data Base
-                                <input class="@ClassV" type="checkbox" name="[@i].S_Shared_Table_Id_Value" required="@Req.IsRequired" />
+                                <input class="@ClassV" type="checkbox" name="collection[@i].S_Shared_Table_Id_Value" required="@Req.IsRequired" />
 
                             }
 
@@ -123,7 +123,7 @@
                             {///Upload
 
                                 <label for="file1">Filename:</label>
-                                <input type="file" name="[@i].files" id="file1" class="@ClassV" multiple required="@Req.IsRequired" />
+                                <input type="file" name="collection[@i].files" id="file1" class="@ClassV" multiple required="@Req.IsRequired" />
 
                                 @*<label for="file2" class="@ClassV">Filename:</label>
                         <input type="file" name="[@i].files" id="file2" class="@ClassV" />*@

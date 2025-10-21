@@ -21,6 +21,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static NRules.RuleModel.Builders.RuleTransformation;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using static WorkFlow.Controllers.Requests;
 
 namespace WorkFlow.Controllers
 {     //[ServiceFilter(typeof(DecryptRequestFilter))]
@@ -261,8 +262,13 @@ namespace WorkFlow.Controllers
             ViewData["SystemInfoId"] = new SelectList(_context.SystemInfos.Where(x => x.IsActive == true), "SystemInfoId", "SystemInfoName");
             return View();
         }
+        [HttpGet]
+        public IActionResult RequestPOstTest(int? ApplicationId )
+        {
+            return Ok();
+        }
 
- 
+
         // POST: Applications/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

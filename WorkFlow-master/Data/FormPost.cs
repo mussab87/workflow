@@ -7,9 +7,9 @@
 
 
 
-        public int RequestID { get; set; }
-        public int Request_Level_Id { get; set; }
-        public int EmployeId { get; set; }
+        public int? RequestID { get; set; }
+        public int? Request_Level_Id { get; set; }
+        public int? EmployeId { get; set; }
 
         public string Application_Requirement_Id { get; set; }
         public string S_Value { get; set; }
@@ -20,7 +20,7 @@
         public List<string> Application_Req_Details_Id { get; set; }
 
 
-        public List<IFormFile> files { get; set; }
+        //public List<IFormFile> files { get; set; }
 
     }
 }

@@ -95,10 +95,23 @@ namespace WorkFlow.Controllers
             ViewBag.ApplicationLevelId = FirstLevel.ApplicationLevelId;
             return PartialView(model);
         }
-
-
-
+        public class RequestPostModel
+        {
+            // Use the exact names (case-insensitive) as your form inputs
+            public int? ApplicationId { get; set; }
+            public int? ApplicationLevelId { get; set; }
+            public int? AssignedFromEmpId { get; set; }
+            public int? AssignedToEmp_Id { get; set; }
+            // Ensure this matches the form element's 'name' attribute
+        }
         [HttpPost]
+        public ActionResult RequestPOstTest([FromForm] RequestPostModel RequestPostModel)
+        {
+            return Ok();
+        }
+
+
+            [HttpPost]
         public ActionResult RequestPOst(List<FormPost> collection, int ApplicationId ,int ApplicationLevelId, int? AssignedFromEmpId, int? AssignedToEmp_Id)
         {
             // الحصول على معلومات المستخدم الحالي

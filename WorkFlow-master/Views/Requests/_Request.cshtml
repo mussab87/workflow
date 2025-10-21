@@ -62,6 +62,21 @@
     function PostNewRequest() {
         try {
             if ($("#FormPostNewRequest").valid()) {
+              
+                var formData = $("#FormPostNewRequest").serialize();
+                var url ="@Url.Action("RequestPOstTest", "Applications")";
+    // 2. Perform the AJAX POST request
+    $.getJSON(
+     url, // The URL to submit the data to
+        { ApplicationId: 22 },             // The serialized form data
+        function(response) {
+            // Success handler
+            console.log("Success:", response);
+        }
+    ).fail(function(error) {
+        // Error handler
+        console.error("Error:", error);
+    });
                 console.log('valed')
             }
             else { 
